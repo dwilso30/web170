@@ -12,7 +12,7 @@
 <![endif]-->
 <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/flexslider.css" type="text/css" media="screen" />
 <link href="<?php bloginfo('stylesheet_url');?>" type="text/css" rel="stylesheet">
-<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
+<link href="../css/font-awesome.min.css" type="text/css" rel="stylesheet">
 
 <meta name="viewport" content="width=device-width, intial-scale=1">
    		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -31,7 +31,7 @@
    
     
     
-  <script src="js/modernizr.js"></script>
+  <script src="../js/modernizr.js"></script>
 
   <style type="text/css">
     .flex-caption {
@@ -58,72 +58,34 @@
 <body <?php body_class();?>>
 
 <header>
-<a href="index.html">
+<a href="../index.html">
 <img src="<?php bloginfo('template_directory');?>/images/banner.jpg" id="banner" alt="banner"></a>
 </header>
- <nav>
-        <ul>
-            <li>
-                Home
-            </li>
-            <li>
-                <a href="about">
-                    About
-                </a>
-            </li>
-            <li>
-                <a href="blog">
-                    Blog
-                </a>
-            </li>
-            <li>
-                <a href="calendar">
-                    Calendar
-                </a>
-            </li>
-            <li>
-                <a href="contact">
-                    Contact
-                </a>
-            </li>
 
-        </ul>
-    </nav>
+<nav>
+<ul id="nav">
+<li><a href="#">About</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Events</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav>
     <!--++++++++++ START MOBILE NAVIGATION ++++++++-->
     <button class="nav-button">Toggle Navigation</button>
     <div class="mobile-logo">
-        <a href="index.html" title="Home">
-            <img src="images/logo-small.png" alt="small logo">
+      <a href="../index.html" title="Home">
+            <img src="../images/logo-small.png" alt="small logo">
         </a>
     </div>
 
-    <ul class="primary-nav">
-        <li>
-            <a href="index.html">
-                Home
-            </a>
-        </li>
-        <li>
-            <a href="about">
-                About
-            </a>
-        </li>
-        <li>
-            <a href="blog">
-                Blog
-            </a>
-        </li>
-        <li>
-            <a href="calendar">
-                Calendar
-            </a>
-        </li>
-        <li>
-            <a href="contact">
-                Contact
-            </a>
-        </li>        
-    </ul>
+ <ul class="primary-nav">
+			<li><a href="#">About</a></li>
+			<li><a href="#">Blog</a></li>
+			<li><a href="#">Events</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+   
+
     <script>
 		$(document).ready(function(){
 			$(".nav-button").click(function () {
@@ -182,19 +144,13 @@
   </script>
   <!--end flexslider-->
 <main>
-<h1>Seattle Alehouse</h1>
-<p>
-The Pyramid Alehouse in Seattle is the original location for Pryamid beer. It offers a world of extraordinary tastes waiting to be explored on draft including our year-round beers, rotating seasonals, featured selections from our sister brewery the Portland Brewing Co., as well as a few unique Pyramid offerings you won’t find anywhere else. Enjoy a pint, explore a Pyramid Sampler, or order a growler of brewery fresh beer to go. Pair your brew with a tasty selection off of our full menu of classic brew house cuisine.</p>
 
-<p>Located across the street from Safeco Field, home of the Seattle Mariners, and just a block south of CenturyLink Field - the Alehouse is a great place for friends to gather before or after a baseball, football or soccer game.
-</p>
 
 <?php 
-if (have_posts()) :while (have_posts()) :the_post();?>
-<h2><?php the_title(); ?></h2>
+if (have_posts()) : while (have_posts()) : the_post(); ?>
+<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 		
-		the_permalink();
-		the_content();
+		<?php the_content(); ?>
 	
 <?php endwhile; endif; ?>
 <small>index.php</small>
