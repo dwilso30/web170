@@ -1,7 +1,7 @@
 <?php
 
 /*
-Theme Name: Web170 
+Theme Name: pyramid
 Theme URI:https://github.com/dwilso30/web170
 Author: Danielle Wilson
 Author URI:www.wairatawilson.com
