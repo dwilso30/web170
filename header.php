@@ -83,7 +83,7 @@
 </div>
 -->
 <!--wp menu-->
-<?php wp_nav_menu(); ?>
+<?php wp_nav_menu(array('theme_location' => 'main-menu', 'container' => 'div', 'container_id' => 'navigation' )); ?>
 
 
    
