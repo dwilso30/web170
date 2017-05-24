@@ -8,19 +8,19 @@
 <div class="flexslider">
           <ul class="slides">
             <li>
-  	    	    <img src="images/exterior.jpg" alt="exterior" />
+  	    	    <img src="<?php bloginfo('template_directory');?>/exterior.jpg" alt="exterior" />
               <p class="flex-caption">Welcome to Pyramid!</p>
   	    		</li>
   	    		<li>
-  	    	    <img src="images/curve.jpg" alt="curve"/>
+  	    	    <img src="<?php bloginfo('template_directory');?>/curve.jpg" alt="curve"/>
               <p class="flex-caption">Year round beers</p>
   	    		</li>
   	    		<li>
-  	    	    <img src="images/interior.jpg" alt="interior"/>
+  	    	    <img src="<?php bloginfo('template_directory');?>/interior.jpg" alt="interior"/>
               <p class="flex-caption">The alehouse</p>
   	    		</li>
   	    		<li>
-  	    	    <img src="images/garden.jpg" alt="garden"/>
+  	    	    <img src="<?php bloginfo('template_directory');?>/garden.jpg" alt="garden"/>
               <p class="flex-caption">Pregame!</p>
   	    		</li>
           </ul>
@@ -47,18 +47,37 @@
     });
   </script>
 
+ <!-- Begin Widgets -->
+    <main>
+        <h2> Seattle Alehouse</h2>
+        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <article id="article-<?php the_ID(); ?>" class="article">
+        <?php the_content(); ?>
+        </article>
+        <?php endwhile; endif; ?>
+        <small>front-page.php</small>
+        </main>
+      
+       <aside>
+            <h2>Latest News:</h2>
+            <ul class="news">
+            <?php rewind_posts();  ?>
+            <?php query_posts(array('posts_per_page' => '4', 'category_name' =>'news')); ?>
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+            <?php endwhile; endif; ?>
+            </ul>
+             <h2>Latest Articles:</h2>
+            <ul class="art">
+            <?php rewind_posts();  ?>
+            <?php query_posts(array('posts_per_page' => '4', 'category_name' =>'articles')); ?>
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+            <?php endwhile; endif; ?>
+            </ul>
+            
+        </aside>
 
-<?php 
-if (have_posts()) : while (have_posts()) : the_post(); ?>
-<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-		
-		<?php the_content(); ?>
-	
-<?php endwhile; endif; ?>
-<h1> Seattle Alehouse</h1>
-<p>
-The Pyramid Alehouse in Seattle is the original location for Pryamid beer. It offers a world of extraordinary tastes waiting to be explored on draft including our year-round beers, rotating seasonals, featured selections from our sister brewery the Portland Brewing Co., as well as a few unique Pyramid offerings you won’t find anywhere else. Enjoy a pint, explore a Pyramid Sampler, or order a growler of brewery fresh beer to go. Pair your brew with a tasty selection off of our full menu of classic brew house cuisine.</p>
-<small>front-page.php</small>
 
 
 
