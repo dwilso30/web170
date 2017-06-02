@@ -51,22 +51,7 @@
     <!--widgets-->
     <?php dynamic_sidebar(1);?>
     <!--end widgets-->
-    <h3>Featured Beers</h3>
-        
-        <p>These beers are produced in small batches by our brewer Kim Brusco. They change seasonally and are only found exclusively at the Seattle Alehouse. The current selections are listed below:
-        </p>
-       
-        <h3>Mctut Stout</h3>
-      
-        <h3>Hancock Bitter</h3>
-       
-        <h3>Nitro Red </h3>
-        
-        <h3>Citrus IPA</h3>
-        
-        <h3>Winter Bock</h3>
-        
-         <h3>Blonde Altbier</h3>
+ 
        
        
 
