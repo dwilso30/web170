@@ -13,4 +13,8 @@ register_nav_menus(array('main-menu' =>('Main Menu'), 'footer-menu' => __ ('Foot
 
 //support for featured images 
 add_theme_support('post-thumbnails');
+
+//register sidebars
+register_sidebar(array('before_widget'=> '<div>' , 'after_widget' => '</div>'));
+
 ?>
