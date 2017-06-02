@@ -1,4 +1,5 @@
 <aside>
+<div id="sub-nav">
 <h2>
 	<?php 
 	
@@ -38,7 +39,18 @@
 	
 	?>
     </ul>
-    
+    </div>
+    <!--end sub nav-->
+    <!--pull quote-->
+    <div id="quote">
+    <?php if(get_post_meta($post->ID, 'quote', true)) : ?>
+    <blockquote><?php echo get_post_meta($post->ID, 'quote', true); ?></blockquote>
+    <?php endif;?>
+    </div>
+    <!--end pull quote-->
+    <!--widgets-->
+    <?php dynamic_sidebar(1);?>
+    <!--end widgets-->
     <h3>Featured Beers</h3>
         
         <p>These beers are produced in small batches by our brewer Kim Brusco. They change seasonally and are only found exclusively at the Seattle Alehouse. The current selections are listed below:
