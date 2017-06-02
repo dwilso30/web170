@@ -8,6 +8,9 @@ Author URI:www.wairatawilson.com
 Description:This is the theme for my web170 class project. Spring 2017
 Version:1
 */
+@charset "UTF-8";
+/* CSS Document */
+
 * {
 padding:0;
 margin:0;
@@ -25,7 +28,7 @@ margin:0;
 }
 
 body{
-	background-image:url(../images/copper.jpg);
+	background-image:url(images/copper.jpg);
 }
 
 header{
@@ -42,8 +45,9 @@ header{
        width: 100%;
 	   display:block;
      }
+	
 
-nav {
+#navigation {
 height:50px;
 background:#8e273a;
 line-height:50px;
@@ -52,7 +56,7 @@ z-index:101;
 
 }
 
-nav li{
+#navigation li{
 list-style-type:none;
 float:left;
 width:16.66666667%;
@@ -63,26 +67,62 @@ font-weight:bold;
 
 }
 
-nav a {
+#navigation li a {
 text-decoration:none;
 display:block;
 color:#d89a35;
 }
 
-nav a:hover {
+#navigation li a:hover {
 background:#be6f24;
 color:#323c71;
 }
 
-nav ul{
-	width:80%;
+#navigation ul{
+	width:75%;
 	margin:0 auto;
+}
+
+nav li:hover .sub-menu li{
+	float:none;
+}
+#navigation ul li ul.sub-menu {
+			display: none; 
+}
+
+
+#navigation li:hover ul.sub-menu{
+	display:block;
+	position:absolute;
+	
+	
+}
+
+#navigation li:hover .sub-menu li{
+	
 }
 
 .nav-button,
 .primary-nav,
 .mobile-logo{
 	display:none;
+}
+
+article.post-excerpt{
+	overflow:hidden;
+	margin-bottom:20px;
+}
+
+ article img.size-thumbnail {
+        float: left;
+        margin-right: 5px 20px;
+ }
+
+ 
+#quote{
+	font-style:italic;
+	padding:5px;
+	text-align:center;
 }
 
 #logo{
@@ -108,12 +148,10 @@ aside {
 width:36.170213%;
 float:right;
 margin-top:100px;
-border: 2px solid #d89a35;
 margin-right:10px;
 margin-bottom:10px;
 
 }
-
 
 p {
 line-height:1.5em;
@@ -230,12 +268,12 @@ display:inline-block;
 
 @font-face {
   font-family: 'FiraSans-Regular';
-  src: url('../fonts/FiraSans-Regular.eot');
-  src: url('../fonts/FiraSans-Regular.woff2') format('woff2'),
-       url('../fonts/FiraSans-Regular.woff') format('woff'),
-       url('../fonts/FiraSans-Regular.ttf') format('truetype'),
-       url('../fonts/FiraSans-Regular.svg#FiraSans-Regular') format('svg'),
-       url('../fonts/FiraSans-Regular.eot?#iefix') format('embedded-opentype');
+  src: url('fonts/FiraSans-Regular.eot');
+  src: url('fonts/FiraSans-Regular.woff2') format('woff2'),
+url('fonts/FiraSans-Regular.woff') format('woff'),
+url('fonts/FiraSans-Regular.ttf') format('truetype'),
+url('fonts/FiraSans-Regular.svg#FiraSans-Regular') format('svg'),
+url('fonts/FiraSans-Regular.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -253,6 +291,11 @@ display:inline-block;
 .social a{
 	color:#d89a35;
 	text-decoration:none;
+}
+
+#main img.size-thumbnail{
+	float:left;
+	padding:10px;
 }
 
 /*ABOUT STYLES*/
@@ -362,7 +405,7 @@ principal h3{
 		color:#8e273a;
 	}
 	
-	#snowcap{
+	#snow{
 		float:left;
 		margin:10px;
 		width:460px;
@@ -374,12 +417,10 @@ principal h3{
 		width:460px;
 		float:right;
 		overflow:hidden;
-	
 	}
 	
 	#cupcake{
 		margin-top:30px;
-		
 	}
 	
 	/*MENU STYLES*/
@@ -400,6 +441,10 @@ principal h3{
 		padding:5px;
 		background:rgba(250, 218, 119,.6);
 	}
+	
+	
+		
+
 
 @media screen and (max-width:1200px) {
 
@@ -544,7 +589,7 @@ principal{
 		left: 7px;
 		width: 50px;
 		height: 35px;
-		background: url('../images/menu-icon-large.png'), linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.2));
+		background: url('images/menu-icon-large.png') , linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.2));
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: 21px, 100%;
@@ -572,7 +617,7 @@ principal{
 		background-color: rgba(0,0,0,.1);
 	}
 	.nav-button.open {
-		background: url('../images/close-icon-large.png'), linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.2));
+		background: url('images/close-icon-large.png') , linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.2));
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: 21px, 100%;
