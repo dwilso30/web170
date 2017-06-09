@@ -2,22 +2,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
+    <meta name="description" content="<?php echo get_the_excerpt();?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php bloginfo('description');?> <br> | <?php bloginfo('name'); ?></title>
+<title><?php get_mikes_title_tag(); ?></title>
 
 <!--Remy Sharp Shim --> 
 <!--[if lte IE 9]> 
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js" >
 </script> 
 <![endif]-->
-<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/flexslider.css" type="text/css" media="screen" />
+
 <link href="<?php bloginfo('stylesheet_url');?>" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/flexslider.css" type="text/css" media="screen" />
 <link href="../css/font-awesome.min.css" type="text/css" rel="stylesheet">
 
 <meta name="viewport" content="width=device-width, intial-scale=1">
    		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		
 		<script>
+		
 		$(document).ready(function(){
 			$(".nav-button").click(function () {
 			$(".nav-button,.primary-nav").toggleClass("open");
@@ -25,7 +30,7 @@
 		});
 		</script>
     
- 
+
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     
     
@@ -50,15 +55,16 @@
       border-radius: 0;
     }
   </style>
-  <!--toggle menu-->
+  <!--
    <script type="text/javascript" charset="utf-8">
 	$(window).load(function(){
 		$("#toggle").click(function(){
 			$("#navigation").toggle();
 		});
 	});
-	<!--end toggle-->	
+	
     </script>
+    -->	
 <!-- start wp head fxn-->
 <?php wp_head();?>
 
@@ -83,9 +89,8 @@
 </div>
 -->
 <!--wp menu-->
+
 <?php wp_nav_menu(array('theme_location' => 'main-menu', 'container' => 'div', 'container_id' => 'navigation' )); ?>
 
-
-   
 
 <div id="wrapper">
